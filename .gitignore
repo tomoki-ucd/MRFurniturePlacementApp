@@ -43,3 +43,9 @@ sysinfo.txt
 
 # Doxygen Documents
 Docs/
+
+# Project Specfic
+Assets/Samples*
+
+# Mac specif file
+*DS_Store

@@ -37,10 +37,13 @@ public class ObjectPlacementManager : MonoBehaviour
             if(_raycastManager.Raycast(ray, out var hit))
             {
                 // Spawn an object
-                var obj = GameObject.CreatePrimitive(PrimitiveType.Cube);
-//                var obj = _objectToSpawn;
+//                var obj = _objectToSpawn;     // Option1: This does not work
+//                var obj = Instantiate(_objectToSpawn, hit.point, Quaternion.LookRotation(hit.normal, Vector3.up));    // Option2: This works
+                var obj = GameObject.CreatePrimitive(PrimitiveType.Cube);   // Option3: This works
+                obj.GetComponent<Renderer>().material = new Material(Shader.Find("Universal Render Pipeline/Lit"));
                 obj.transform.SetPositionAndRotation(hit.point, Quaternion.LookRotation(hit.normal, Vector3.up));  // SetPositionAndRotation(position, rotation)
                                                                                                                     // LookRotation(forward, upward). forward is prioritized.
+
                 obj.transform.localScale *= 0.1f;                                                                                                                    
                 //If MRUK's world locking is not active, Add spatial anchor to the objs's position. 
                 if(MRUK.Instance != null)
