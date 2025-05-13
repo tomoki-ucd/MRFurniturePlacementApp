@@ -6801,7 +6801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 565f31168f3e54da5bf210fcfbfb2855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabToInstantiate: {fileID: 7358392724232654711, guid: 4b044d076d6aa427c850517d30c46d60, type: 3}
+  prefabToInstantiate: {fileID: 3034385664823037719, guid: 4b044d076d6aa427c850517d30c46d60, type: 3}
   canvas: {fileID: 192749933}
 --- !u!1 &782203000
 GameObject:
