@@ -18,17 +18,10 @@ public class PrefabInstantiator: MonoBehaviour
             return;
         }
 
-        Transform spawnPoint= canvas.transform;
-        Vector3 spawnPosition = spawnPoint.position;
+        Vector3 spawnPosition = canvas.transform.position;
         spawnPosition.x += 2.0f;
 
-        Vector3 position = spawnPosition != null ? spawnPosition: Vector3.zero;
-//        Quaternion quaternion = spawnPoint != null ? spawnPoint.rotation : Quaternion.identity;
-//        Quaternion quaternion = Quaternion.identity;  // This sets the rotation 0,0,0 against its parent object.
-
-//        Instantiate(prefabToInstantiate, position, quaternion);
-        GameObject spawnedInstance = Instantiate(prefabToInstantiate, position, prefabToInstantiate.transform.rotation);
-
+        GameObject spawnedInstance = Instantiate(prefabToInstantiate, spawnPosition, prefabToInstantiate.transform.rotation);
 
         // Adjust the height of the spawned object by moving it downward by half of its own height.
         Collider objectCollider = spawnedInstance.GetComponent<Collider>(); // This will get ANY type of Collider including MeshCollider
