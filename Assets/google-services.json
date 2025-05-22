@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "567778613557",
+    "project_id": "my-first-test-project-df530",
+    "storage_bucket": "my-first-test-project-df530.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:567778613557:android:8838d0ca464aecb2ad947c",
+        "android_client_info": {
+          "package_name": "com.IndividualDeveloper.TU.FurniturePlacement"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRNq1fWg99tnRBNDm4YOR499P_pPCoAFQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
