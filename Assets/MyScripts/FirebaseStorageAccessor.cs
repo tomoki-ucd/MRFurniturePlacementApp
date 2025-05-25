@@ -45,6 +45,10 @@ public class FirebaseStorageAccessor : MonoBehaviour
             {
                 Debug.Log("Download URL:" + task.Result);
             }
+            else
+            {
+                Debug.Log("GetDownloadUrlAsync failed");
+            }
         });
     }
 }
