@@ -13,7 +13,11 @@ public class Rotator : MonoBehaviour
     void Update()
     {
         // 右コントローラーのGrabボタンが押されているかどうか状態を取得
-        if(OVRInput.Get(OVRInput.Button.SecondaryHandTrigger))  // OVRInput is a global class
+        // OVRInput is a global class
+        // PrimaryHand is the left and SecondaryHand is the right.
+        // HandTrigger is the trigger button to be pressed with the middle finger.
+        // IndexTrigger is the trigger button to be pressed with the index finger.
+        if(OVRInput.Get(OVRInput.Button.SecondaryHandTrigger))  
         {
             Debug.Log($"{this.GetType().Name}: Right controller grab button is pressed.");
             // 右コントローラーのRaycastでGrabしているオブジェクトを取得
@@ -23,7 +27,10 @@ public class Rotator : MonoBehaviour
                 {
                     Debug.Log($"{this.GetType().Name}: Hit object is {hit.collider.gameObject.name}.");
                     // TO DO: Modify so that it rotates when the trigger of the right controller is pressed.
-                    hit.collider.gameObject.transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
+                    if (OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger))
+                    {
+                        hit.collider.gameObject.transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
+                    }
                 }
             }
             else
